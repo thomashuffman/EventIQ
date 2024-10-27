@@ -1,6 +1,6 @@
-# eventIQ
+# EventIQ
 
-eventIQ is a social platform designed to keep you informed about group activities and events. Whether it’s a pickup basketball game, a study session, or a casual hangout, eventIQ ensures you stay in the loop with real-time notifications and easy group management.
+EventIQ is a social platform designed to keep you informed about group activities and events. Whether it’s a pickup basketball game, a study session, or a casual hangout, EventIQ ensures you stay in the loop with real-time notifications and easy group management.
 
 ## Features
 
@@ -8,7 +8,7 @@ eventIQ is a social platform designed to keep you informed about group activitie
 - **Instant Event Alerts**: Receive real-time notifications about upcoming events in your groups.
 - **Dark-Themed UI**: Enjoy a modern, easy-on-the-eyes interface.
 - **In-App Messaging**: Chat with group members to coordinate and plan activities.
-- **Mobile-Responsive Design**: Access eventIQ on any device, whether you’re at home or on the go.
+- **Mobile-Responsive Design**: Access EventIQ on any device, whether you’re at home or on the go.
 
 ## Technology Stack
 
@@ -19,7 +19,7 @@ eventIQ is a social platform designed to keep you informed about group activitie
 
 ## Getting Started
 
-To set up and run eventIQ locally, follow these instructions:
+To set up and run EventIQ locally, follow these instructions:
 
 ### Prerequisites
 
@@ -29,7 +29,7 @@ To set up and run eventIQ locally, follow these instructions:
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/eventIQ.git
+   git clone https://github.com/yourusername/EventIQ.git
 2. Navigate into the project directory:
     ```bash
     cd eventIQ
@@ -39,4 +39,29 @@ To set up and run eventIQ locally, follow these instructions:
 4. Start the app:
     ```bash
     npm start
+
+## Contributing
+
+We welcome contributions to EventIQ! To get started, please follow these steps:
+
+1. **Fork the Repository**: Click the "Fork" button at the top right of the repository page to create your own copy of EventIQ.
+   
+2. **Clone Your Fork**: Clone the forked repository to your local machine:
+   git clone https://github.com/yourusername/EventIQ.git
+   
+3. **Create a Branch**: Create a new branch for your feature or bug fix:
+   git checkout -b feature/YourFeatureName
+
+4. **Make Changes**: Implement your changes or new features.
+
+5. **Commit Your Changes**: Commit your changes with a descriptive message:
+   git commit -m "Add new feature: YourFeatureName"
+
+6. **Push to Your Fork**: Push your changes to your forked repository:
+   git push origin feature/YourFeatureName
+
+7. **Open a Pull Request**: Go to the original repository and click on "New Pull Request." Describe your changes and submit the pull request.
+
+Thank you for contributing to EventIQ!
+
 

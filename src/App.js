@@ -14,7 +14,7 @@ const App = () => {
         <button className="cta-button">Get Started</button>
       </main>
       <footer className="app-footer">
-        <p>&copy; 2024 GroupApp. All rights reserved.</p>
+        <p>&copy; 2024 EventIQ. All rights reserved.</p>
       </footer>
     </div>
   );
