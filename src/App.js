@@ -15,6 +15,7 @@ const App = () => {
       </main>
       <footer className="app-footer">
         <p>&copy; 2024 EventIQ. All rights reserved.</p>
+        <div>This is a test to see if I can push code</div>
       </footer>
     </div>
   );
