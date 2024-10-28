@@ -1,3 +1,6 @@
+# Note
+To start the App now run npm start from the EventIQ directory and that will start both the client and the server
+
 # EventIQ
 
 EventIQ is a social platform designed to keep you informed about group activities and events. Whether it’s a pickup basketball game, a study session, or a casual hangout, EventIQ ensures you stay in the loop with real-time notifications and easy group management.

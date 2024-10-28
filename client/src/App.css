@@ -80,3 +80,40 @@ body {
 .app-footer p {
   margin: 0;
 }
+
+.styled-input {
+  width: 100%;
+  max-width: 300px;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+.styled-input:focus {
+  outline: none;
+  border-color: #007bff; /* Change to your primary color */
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.toggle-button {
+  background-color: #28a745;
+  color: white;
+  padding: 8px 16px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.toggle-button:hover {
+  background-color: #218838;
+}
+
+.groups-list {
+  margin-top: 15px;
+}
+
+
