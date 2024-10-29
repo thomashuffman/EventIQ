@@ -23,35 +23,38 @@ AWS.config.update({
 // Initialize DynamoDB DocumentClient
 const docClient = new AWS.DynamoDB.DocumentClient();
 
-// Define API endpoint to add a group
 app.post('/api/groups', (req, res) => {
-  const { groupId, groupName } = req.body; // Get data from request body
-
-  // Validate input
-  if (!groupId || !groupName) {
-    return res.status(400).json({ message: 'groupId and groupName are required' });
-  }
-
-  // Prepare the parameters for DynamoDB
-  const params = {
-    TableName: 'EventIQGroups',
-    Item: {
-      groupId: groupId, // Unique identifier for the group
-      groupName: groupName, // Name of the group
-    },
-  };
-
-  // Call DynamoDB to add the item
-  docClient.put(params, (err, data) => {
-    if (err) {
-      console.error('Unable to add item. Error JSON:', JSON.stringify(err, null, 2));
-      return res.status(500).json({ error: 'Could not add item to DynamoDB' });
-    } else {
-      console.log('Added item:', JSON.stringify(data, null, 2));
-      return res.status(201).json({ message: 'Group added successfully', data });
+    const { groupId, groupName } = req.body; // Get data from request body
+  
+    // Validate input
+    if (!groupId || !groupName) {
+      return res.status(400).json({ message: 'groupId and groupName are required' });
     }
+  
+    // Prepare the parameters for DynamoDB
+    const params = {
+      TableName: 'EventIQGroups',
+      Item: {
+        groupId: groupId, // Unique identifier for the group
+        groupName: groupName, // Name of the group
+      },
+    };
+  
+    // Call DynamoDB to add the item
+    docClient.put(params, (err, data) => {
+      if (err) {
+        console.error('Unable to add item. Error JSON:', JSON.stringify(err, null, 2));
+        return res.status(500).json({ error: 'Could not add item to DynamoDB' });
+      } else {
+        console.log('Added item:', JSON.stringify(params.Item, null, 2)); // Log the added item
+        return res.status(201).json({
+          message: 'Group added successfully',
+          group: params.Item, // Return the newly added group item
+        });
+      }
+    });
   });
-});
+  
 
 // New GET route to fetch items from the correct table name
 app.get('/api/groups', (req, res) => {

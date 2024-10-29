@@ -1,48 +1,33 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchGroups, addGroup } from "../../features/groups/groupSlice";
 
 export const Body = () => {
-  const [groups, setGroups] = useState([]);
-  const [newGroupName, setNewGroupName] = useState("");
-  const [showGroups, setShowGroups] = useState(false);
+  const dispatch = useDispatch();
+  const groups = useSelector((state) => state.groups.groups);
+  const [newGroupName, setNewGroupName] = React.useState("");
+  const [showGroups, setShowGroups] = React.useState(false);
 
   useEffect(() => {
-    const fetchGroups = async () => {
-      try {
-        const response = await axios.get(
-          `${process.env.REACT_APP_API_URL}/groups`
-        );
-        setGroups(response.data);
-      } catch (error) {
-        console.error("There was an error fetching the groups!", error);
-      }
-    };
-    fetchGroups();
-  }, []);
+    dispatch(fetchGroups());
+  }, [dispatch]);
+  
+  useEffect(() => {
+    console.log("Updated Groups:", groups);
+  }, [groups]);
 
-  const handleCreateGroup = async () => {
+  const handleCreateGroup = () => {
     if (!newGroupName) {
       alert("Please enter a group name!");
       return;
     }
-    try {
-      const response = await axios.post(
-        `${process.env.REACT_APP_API_URL}/groups`,
-        {
-          groupId: Date.now().toString(),
-          groupName: newGroupName,
-        }
-      );
-      alert("Group added successfully!");
-      setGroups((prevGroups) => [
-        ...prevGroups,
-        { groupId: Date.now().toString(), groupName: newGroupName },
-      ]);
-      setNewGroupName("");
-    } catch (error) {
-      console.error("There was an error adding the group!", error);
-      alert("Failed to add group. Please try again.");
-    }
+    const newGroup = {
+      groupId: Date.now().toString(),
+      groupName: newGroupName,
+    };
+    dispatch(addGroup(newGroup));
+    alert("Group added successfully!");
+    setNewGroupName("");
   };
 
   return (
@@ -76,7 +61,7 @@ export const Body = () => {
         {showGroups ? "Hide Groups" : "Show Groups"}
       </button>
 
-      {showGroups && (
+      {showGroups && groups.length > 0 && (
         <div className="groups-list mt-4">
           <h3 className="text-xl font-semibold">Existing Groups</h3>
           <ul className="list-disc pl-5 text-center">
