@@ -1,0 +1,72 @@
+/* CreateGroupPage.css */
+
+.create-group-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    padding-top: 80px; /* Ensures it clears the navbar */
+    background-color: black;
+    color: white;
+    height: 100vh; /* Fill the viewport height */
+  }
+  
+  .page-title {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 16px;
+    text-align: center;
+  }
+  
+  .create-group-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px; /* Space between form elements */
+    width: 100%;
+    max-width: 400px; /* Limit the width of the form */
+  }
+  
+  .create-group-form label {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #fbbf24; /* Heading color for labels */
+  }
+  
+  .create-group-form input[type="text"],
+  .create-group-form textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #d1d5db; /* Light gray border */
+    border-radius: 4px;
+    background-color: #1f2937; /* Dark background for inputs */
+    color: white; /* White text for inputs */
+    transition: border-color 0.3s ease;
+  }
+  
+  .create-group-form input[type="text"]:focus,
+  .create-group-form textarea:focus {
+    border-color: #3b82f6; /* Blue border on focus */
+    outline: none; /* Remove default outline */
+  }
+  
+  .create-group-form textarea {
+    resize: vertical; /* Allow vertical resizing only */
+    min-height: 120px; /* Minimum height for the textarea */
+  }
+  
+  .create-group-form button {
+    padding: 8px 16px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: white;
+    background-color: #3b82f6; /* Button background color */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .create-group-form button:hover {
+    background-color: #2563eb; /* Darker blue on hover */
+  }
+  
