@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -9,7 +10,7 @@ export const Navbar = () => {
 
   return (
     <nav className="w-full fixed top-0 flex items-center justify-between p-5 bg-yellow-300 text-black z-10 shadow-lg">
-      <div className="text-lg font-bold">MyApp</div>
+      <div className="text-lg font-bold">EventIQ</div>
       <div className="md:hidden">
         <button onClick={toggleMenu} className="focus:outline-none">
           <div className="space-y-1">
@@ -25,24 +26,24 @@ export const Navbar = () => {
         }`}
       >
         <li className="text-center py-2 md:py-0">
-          <a href="#home" className="block text-black">
+          <Link to="/" className="block text-black">
             Home
-          </a>
+          </Link>
         </li>
         <li className="text-center py-2 md:py-0">
-          <a href="#about" className="block text-black">
+          <Link to="/about" className="block text-black">
             About
-          </a>
+          </Link>
         </li>
         <li className="text-center py-2 md:py-0">
-          <a href="#services" className="block text-black">
-            Services
-          </a>
+          <Link to="/manage-groups" className="block text-black">
+            Manage Groups
+          </Link>
         </li>
         <li className="text-center py-2 md:py-0">
-          <a href="#contact" className="block text-black">
+          <Link to="/contact" className="block text-black">
             Contact
-          </a>
+          </Link>
         </li>
       </ul>
     </nav>
