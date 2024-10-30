@@ -9,6 +9,11 @@ export const CreateGroupPage = () => {
   const navigate = useNavigate();
   const [groupName, setGroupName] = useState("");
   const [description, setDescription] = useState("");
+  const [groupType, setGroupType] = useState("");
+  const [privacy, setPrivacy] = useState("public");
+  const [location, setLocation] = useState("");
+  const [maxMembers, setMaxMembers] = useState(10);
+  const [groupImage, setGroupImage] = useState(null);
 
   const handleCreateGroup = () => {
     if (!groupName) {
@@ -20,6 +25,11 @@ export const CreateGroupPage = () => {
       groupId: Date.now().toString(),
       groupName,
       description,
+      groupType,
+      privacy,
+      location,
+      maxMembers,
+      groupImage,
     };
 
     dispatch(addGroup(newGroup));
@@ -41,7 +51,7 @@ export const CreateGroupPage = () => {
             required
           />
         </label>
-        
+
         <label>
           Description:
           <textarea
@@ -50,9 +60,49 @@ export const CreateGroupPage = () => {
           ></textarea>
         </label>
 
-        <button type="button" onClick={handleCreateGroup}>
-          Create Group
-        </button>
+        <label>
+          Group Type:
+          <select value={groupType} onChange={(e) => setGroupType(e.target.value)}>
+            <option value="">Select type</option>
+            <option value="study">Study Group</option>
+            <option value="project">Project Team</option>
+            <option value="social">Social Club</option>
+            {/* Add more options as needed */}
+          </select>
+        </label>
+
+        <label>
+          Privacy:
+          <select value={privacy} onChange={(e) => setPrivacy(e.target.value)}>
+            <option value="public">Public</option>
+            <option value="private">Private</option>
+            <option value="invite-only">Invite Only</option>
+          </select>
+        </label>
+
+        <label>
+          Location:
+          <input
+            type="text"
+            value={location}
+            onChange={(e) => setLocation(e.target.value)}
+          />
+        </label>
+
+        <label>
+          Max Members:
+          <input
+            type="number"
+            value={maxMembers}
+            onChange={(e) => setMaxMembers(e.target.value)}
+            min="1"
+          />
+        </label>
+
+        <button type="button" className="create-group-button" onClick={handleCreateGroup}>
+  Create Group
+</button>
+
       </form>
     </main>
   );
