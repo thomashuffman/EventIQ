@@ -1,0 +1,77 @@
+.create-group-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: black; /* Match background color of the app */
+    color: white;
+    padding: 40px; /* Add padding around the main area */
+    padding-top: 80px;
+}
+
+.page-title {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.create-group-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 600px; /* Limit width for better layout */
+    background-color: #1f2937; /* Dark background for the form */
+    padding: 20px; /* Padding inside the form */
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Slight shadow for depth */
+}
+
+.create-group-form label {
+    margin-bottom: 12px; /* Space between labels */
+    font-weight: bold; /* Make labels bold */
+}
+
+.create-group-form input[type="text"],
+.create-group-form input[type="number"],
+.create-group-form textarea,
+.create-group-form select {
+    width: 100%; /* Full width for inputs */
+    padding: 10px; /* Padding for input fields */
+    margin-bottom: 16px; /* Space between fields */
+    border: 1px solid #d1d5db; /* Light border */
+    border-radius: 4px; /* Rounded corners */
+    background-color: #374151; /* Darker background for inputs */
+    color: white; /* White text */
+}
+
+.create-group-form textarea {
+    resize: vertical; /* Allow vertical resizing */
+}
+
+.create-group-button {
+    background: linear-gradient(90deg, #3b82f6, #2563eb); /* Gradient background */
+    color: white;
+    border: none; /* Remove border */
+    border-radius: 4px; /* Rounded corners */
+    padding: 12px 20px; /* Increased padding for better appearance */
+    font-size: 1rem; /* Font size for button */
+    cursor: pointer; /* Pointer on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Shadow for depth */
+    transition: background-color 0.3s, transform 0.2s; /* Smooth transition for hover effects */
+}
+
+.create-group-button:hover {
+    background: linear-gradient(90deg, #2563eb, #1d4ed8); /* Darker gradient on hover */
+    transform: translateY(-2px); /* Slight lift effect on hover */
+}
+
+.create-group-button:active {
+    transform: translateY(1px); /* Pressed effect */
+}
+
+.create-group-form input[type="file"] {
+    padding: 8px; /* Padding for file input */
+    border: 1px solid #d1d5db; /* Light border for file input */
+    border-radius: 4px; /* Rounded corners for file input */
+    background-color: #374151; /* Darker background */
+    color: white; /* White text */
+}

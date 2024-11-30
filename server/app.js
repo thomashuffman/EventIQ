@@ -24,7 +24,13 @@ AWS.config.update({
 const docClient = new AWS.DynamoDB.DocumentClient();
 
 app.post('/api/groups', (req, res) => {
-    const { groupId, groupName } = req.body; // Get data from request body
+    const { groupId, groupName, 
+        description,
+        groupType,
+        privacy,
+        location,
+        maxMembers } = req.body; // Get data from request body
+    
   
     // Validate input
     if (!groupId || !groupName) {
@@ -37,6 +43,11 @@ app.post('/api/groups', (req, res) => {
       Item: {
         groupId: groupId, // Unique identifier for the group
         groupName: groupName, // Name of the group
+        description: description,
+        groupType: groupType,
+        privacy: privacy,
+        location: location,
+        maxMembers: maxMembers
       },
     };
   
